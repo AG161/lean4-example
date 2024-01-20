@@ -1,7 +1,14 @@
-open Nat (add_assoc add_comm)
+theorem dojo2_uncombined (p : Prop) : p ∨ p → p := by
+  intro h
+  cases h
+  assumption
+  assumption
 
-theorem hello_world (a b c : Nat)
-  : a + b + c = a + c + b := by
-  rw [add_assoc, add_comm b, ←add_assoc]
+/-
+theorem jtest (n : Nat) : n = n := by
+  sorry
+-/
 
-theorem foo (a : Nat) : a + 1 = Nat.succ a := by rfl
+theorem dojo2_combined (p : Prop) : p ∨ p → p := by
+  intro h
+  cases h <;> assumption
